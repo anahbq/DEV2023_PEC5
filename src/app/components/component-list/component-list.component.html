@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <h1 class="text-primary-emphasis">Disney Characters</h1>
+    <div class="d-block">
+        <div class="float-end">
+            <mat-button-toggle-group #group="matButtonToggleGroup" value="grid">
+                <mat-button-toggle value="grid">
+                    <mat-icon>grid_view</mat-icon>
+                </mat-button-toggle>
+                <mat-button-toggle value="list">
+                    <mat-icon>list</mat-icon>
+                </mat-button-toggle> 
+            </mat-button-toggle-group>
+        </div>
+    </div>
+    <mat-spinner *ngIf="loading" class="d-flex justify-content-center"></mat-spinner>
+    <app-cards [characters]="characters" *ngIf="group.value === 'grid'"></app-cards>
+    <app-table [dataSource]="dataSource" *ngIf="group.value === 'list'"></app-table> 
+</div>
+  
+  

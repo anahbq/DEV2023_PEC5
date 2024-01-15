@@ -1,0 +1,119 @@
+<div class="container mt-5">
+    <div class="d-flex justify-content-end mb-2">
+        <button type="button" class="btn btn-primary" routerLink="/">Back</button>
+    </div>
+
+    <div *ngIf="character" class="animate__animated animate__bounce animate__fadeIn">
+        <div class="card mb-3 border border-0">
+            <div class="row g-0">
+            <div class="col-md-3">
+                <img src="{{character.imageUrl}}" class="img-fluid rounded" alt="Imagen personaje">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h1 class="card-title text-uppercase text-black">{{character.name}}</h1>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et fermentum massa. Proin varius interdum diam non cursus. Nam accumsan orci velit, sodales dapibus ante luctus in. Nulla facilisi. Vestibulum in lorem vel quam fermentum porttitor. Curabitur sit amet erat et dolor fringilla malesuada. Duis scelerisque mi egestas iaculis mollis. </p>
+                    <p class="card-text">
+                        <small class="text-body-secondary">ID: {{character._id}}</small>
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <button class="btn btn-outline-dark" (click)="show = !show">Show all details</button>
+        <div class="mt-5" *ngIf="show">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        Allies
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list>
+                        <mat-list-item *ngFor="let data of character.allies">{{data}} </mat-list-item>
+                        <mat-list-item *ngIf="!character.allies[0]">Allies 1</mat-list-item>
+                        <mat-list-item *ngIf="!character.allies[0]">Allies 2</mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        Enemies
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list>
+                        <mat-list-item *ngFor="let data of character.enemies">{{data}} </mat-list-item>
+                        <mat-list-item *ngIf="!character.enemies[0]">Enemy 1</mat-list-item>
+                        <mat-list-item *ngIf="!character.enemies[0]">Enemy 2</mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        Films
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list>
+                        <mat-list-item *ngFor="let data of character.films">{{data}} </mat-list-item>
+                        <mat-list-item *ngIf="!character.films[0]">Films 1</mat-list-item>
+                        <mat-list-item *ngIf="!character.films[0]">Films 2</mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        Short Films
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list>
+                        <mat-list-item *ngFor="let data of character.shortFilms">{{data}} </mat-list-item>
+                        <mat-list-item *ngIf="!character.shortFilms[0]">ShortFilm 1</mat-list-item>
+                        <mat-list-item *ngIf="!character.shortFilms[0]">ShortFilm 2</mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        TV Shows
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list>
+                        <mat-list-item *ngFor="let data of character.tvShows">{{data}} </mat-list-item>
+                        <mat-list-item *ngIf="!character.tvShows[0]">TvShow 1</mat-list-item>
+                        <mat-list-item *ngIf="!character.tvShows[0]">TvShow 2</mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        Video Games
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list>
+                        <mat-list-item *ngFor="let data of character.videoGames">{{data}} </mat-list-item>
+                        <mat-list-item *ngIf="!character.videoGames[0]">Video Games 1</mat-list-item>
+                        <mat-list-item *ngIf="!character.videoGames[0]">Video Games 2</mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                        Park Attractions
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list>
+                        <mat-list-item *ngFor="let data of character.parkAttractions">{{data}} </mat-list-item>
+                        <mat-list-item *ngIf="!character.parkAttractions[0]">Park Attraction 1</mat-list-item>
+                        <mat-list-item *ngIf="!character.parkAttractions[0]">Park Attraction 2</mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+            </mat-accordion>
+            <br>
+            <p>Do you want to see more info? visit <a class="btn text-primary p-0 m-0" type="button" href="{{character.sourceUrl}}">Disney Fandom Wiki</a></p>
+            <br>
+        </div>
+    </div>
+    <div *ngIf="!character">
+        <p class="text-danger">No info, press back!</p>
+    </div>
+</div>
