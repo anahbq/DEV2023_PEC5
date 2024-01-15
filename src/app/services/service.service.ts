@@ -10,7 +10,7 @@ export class ServiceService {
 
   getAllCharacters(): Observable<ListCharacters> {
     return this.http.get<ListCharacters>(
-      'https://api.disneyapi.dev/character?page=5'
+      'https://api.disneyapi.dev/character?pageSize=50'
     );
   }
   getCharacterById(id: String): Observable<charDisney> {
