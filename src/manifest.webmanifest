@@ -1,7 +1,7 @@
 {
   "name": "Disney Characters",
   "short_name": "Disney Characters",
-  "theme_color": "#1976d2",
+  "theme_color": "#317EFB",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
