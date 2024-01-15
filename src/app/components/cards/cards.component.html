@@ -1,10 +1,10 @@
 <div class="d-block mt-5 pt-5">
-    <mat-grid-list cols="4" rowHeight="240px">
+    <mat-grid-list cols="3" rowHeight="320px">
         <mat-grid-tile *ngFor="let c of characters">
             <mat-card [routerLink]="['/character', c._id]" class="card w-75 h-75">
                 <img mat-card-image src="{{c.imageUrl}}" class="mw-100 h-75" alt="Imagen de {{c.name}}">
-                <mat-card-content class="card-body">
-                    <p class="card-title overflow-hidden">{{c.name}}</p>
+                <mat-card-content class="card-body overflow-hidden">
+                    <p class="card-title">{{c.name}}</p>
                 </mat-card-content>
             </mat-card>
         </mat-grid-tile>
