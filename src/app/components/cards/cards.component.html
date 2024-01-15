@@ -4,7 +4,7 @@
             <mat-card [routerLink]="['/character', c._id]" class="card w-75 h-75">
                 <img mat-card-image src="{{c.imageUrl}}" class="mw-100 h-75">
                 <mat-card-content class="card-body">
-                    <p class="card-title">{{c.name}}</p>
+                    <p class="card-title overflow-hidden">{{c.name}}</p>
                 </mat-card-content>
             </mat-card>
         </mat-grid-tile>
