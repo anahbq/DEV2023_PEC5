@@ -3,16 +3,20 @@
     <div class="d-block">
         <div class="float-end">
             <mat-button-toggle-group #group="matButtonToggleGroup" value="grid">
-                <mat-button-toggle value="grid">
+                <mat-button-toggle value="grid" aria-label="view in grid cards">
                     <mat-icon>grid_view</mat-icon>
                 </mat-button-toggle>
-                <mat-button-toggle value="list">
+                <mat-button-toggle value="list" aria-label="view in list">
                     <mat-icon>list</mat-icon>
                 </mat-button-toggle> 
             </mat-button-toggle-group>
         </div>
     </div>
-    <mat-spinner *ngIf="loading" class="d-flex justify-content-center"></mat-spinner>
+    <div class="container" *ngIf="loading" >
+        <div class="row justify-content-center align-items-center minh-100 vh-100">
+            <mat-spinner></mat-spinner>
+        </div>
+    </div>
     <app-cards [characters]="characters" *ngIf="group.value === 'grid'"></app-cards>
     <app-table [dataSource]="dataSource" *ngIf="group.value === 'list'"></app-table> 
 </div>
